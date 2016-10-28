@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+.drag-container {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 50px;
+  right: 50px;
+  top: 50px;
+  bottom: 50px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  .tile {
+    cursor: move;
+    user-select: none;
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: yellowgreen;
+    color: #3A3A4D;
+    padding: 5px;
+    font-weight: bold;
+  }
+}

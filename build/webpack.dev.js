@@ -28,7 +28,8 @@ module.exports = {
     loaders: getLoaders(ENV)
   },
   externals: {
-    'TweenLite': 'TweenLite'
+    'TweenLite': 'TweenLite',
+    'CSSPlugin': 'CSSPlugin'
   },
   plugins: getPlugins(ENV),
   eslint: {

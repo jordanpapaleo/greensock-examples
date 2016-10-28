@@ -1,4 +1,7 @@
-import timeline from './timeline'
+import './main.scss'
+// import timeline from './timeline'
+import draggable from './draggable'
+// import simpleAnimation from './simpleAnimation'
 
 (function () {
   'use strict'
@@ -12,6 +15,6 @@ import timeline from './timeline'
     domNode.style.height = '100px'
     domNode.style.backgroundColor = 'orange'
     document.body.appendChild(domNode)
-    timeline()
+    draggable()
   })
 }())

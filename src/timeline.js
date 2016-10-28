@@ -3,9 +3,10 @@ import TimelineMax from 'gsap/src/minified/TimelineMax.min.js'
 import {concavePolygon, convexPolygon} from './geometry'
 
 export default function timeline () {
-  const box = document.querySelector('#box')
-  const timeline = new TimelineMax()
-  const time = 0.25
+  const timeline = new TimelineMax({
+    paused: false
+  })
+  const duration = 0.75
 
   const pageCenter = [window.innerWidth / 2, window.innerHeight / 2]
   let points = [ pageCenter ]
@@ -17,12 +18,29 @@ export default function timeline () {
     points.push(data[0])
   }
 
-  TweenMax.to(box, 0, {
+  TweenMax.to('#box', 0, {
     x: pageCenter[0],
     y: pageCenter[1]
   })
 
-  points.forEach((point) => {
-    timeline.add(TweenMax.to(box, time, { x: point[0], y: point[1] }))
+  // points.forEach((point, i) => {
+  //   timeline.to('#box', duration, {
+  //     ease: window.Quad.easeOut,
+  //     x: point[0],
+  //     y: point[1]
+  //   })
+  // })
+
+  timeline.from('#box', duration, {
+    scale: 10,
+    opacity: 0,
+    ease: window.Back.easeOut
   })
+
+  /*
+  timeline.stop()
+  timepline.play()
+  timeline.pause()
+  timeline.reverse()
+  */
 }
